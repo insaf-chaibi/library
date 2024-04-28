@@ -14,56 +14,27 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <img src="{{$dog->image}}" class="img-fluid" style="height: 30%; width:30% ; margin:10px">
+                        <img src="{{$book->image}}" class="img-fluid" style="height: 30%; width:30% ; margin:10px">
                         <div class="container">
 
                                 <div class="row">
                                     <div class="col-4 col-md-3">Name </div>
-                                    <div class="col-8 col-md-9"><p>{{$dog->name}}</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 col-md-3">Location </div>
-                                    <div class="col-8 col-md-9"><p>{{$dog->location}}</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 col-md-3">Age </div>
-                                    <div class="col-8 col-md-9">
-
-                                        @if($dog->age == 1)
-                                            <p>{{ $dog->age }}  year</p>
-                                        @else
-                                            <p>{{ $dog->age }}  years</p>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 col-md-3">Weight </div>
-                                    <div class="col-8 col-md-9"><p>{{$dog->weight}} Kg</div>
+                                    <div class="col-8 col-md-9"><p>{{$book->name}}</div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-4 col-md-3"> Breed </div>
-                                    <div class="col-8 col-md-9"><p>{{$dog->breed}}</div>
+                                    <div class="col-4 col-md-3"> Category </div>
+                                    <div class="col-8 col-md-9"><p>{{$book->category}}</div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-4 col-md-3">Gender</div>
-                                    <div class="col-8 col-md-9"><p>{{$dog->gender}}</div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-4 col-md-3">Vaccinated</div>
-                                    <div class="col-8 col-md-9"><p>{{$dog->vaccinated}}</div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-4 col-md-3">Sterilized</div>
-                                    <div class="col-8 col-md-9"><p>{{$dog->sterilized}}</div>
+                                    <div class="col-4 col-md-3">Price</div>
+                                    <div class="col-8 col-md-9"><p>{{$book->price}} DNT</div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-4 col-md-3">Description</div>
-                                    <div class="col-8 col-md-9"><p>{{$dog->description}}</div>
+                                    <div class="col-8 col-md-9"><p>{{$book->description}}</div>
                                 </div>
 
                             </div>

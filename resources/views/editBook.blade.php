@@ -14,16 +14,16 @@
             <div class="card">
 
                 <div class="card-body">
-                    <form method="POST" enctype="multipart/form-data" action="{{ route('dogs.update',$dog->id) }}">
+                    <form method="POST" enctype="multipart/form-data" action="{{ route('books.update',$book->id) }}">
                         @csrf
                         @method('PUT')
-                        <img src="{{ $dog->image}}" class="img-fluid" style="height: 30%; width:30% ; margin:10px" >
+                        <img src="{{ $book->image}}" class="img-fluid" style="height: 30%; width:30% ; margin:10px" >
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Title') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" value="{{ $dog->name }}" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" >
+                                <input id="name" type="text" value="{{ $book->name }}" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" >
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -37,7 +37,7 @@
                             <label for="location" class="col-md-4 col-form-label text-md-end">{{ __('Location') }}</label>
 
                             <div class="col-md-6">
-                                <input id="location" type="text" value="{{ $dog->location }}" class="form-control @error('location') is-invalid @enderror" name="location" value="{{ old('location') }}" required autocomplete="location" >
+                                <input id="location" type="text" value="{{ $book->location }}" class="form-control @error('location') is-invalid @enderror" name="location" value="{{ old('location') }}" required autocomplete="location" >
 
                                 @error('location')
                                     <span class="invalid-feedback" role="alert">
@@ -50,7 +50,7 @@
                         <div class="row mb-3">
                             <label for="age" class="col-md-4 col-form-label text-md-end">{{ __('Age') }}</label>
                             <div class="col-md-6">
-                                <input id="age" type="number" value="{{ $dog->age }}" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age">
+                                <input id="age" type="number" value="{{ $book->age }}" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age">
                                 @error('age')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -63,7 +63,7 @@
                             <label for="weight" class="col-md-4 col-form-label text-md-end">{{ __('Weight') }}</label>
 
                             <div class="col-md-6">
-                                <input id="weight" type="number" value="{{ $dog->weight }}" class="form-control @error('weight') is-invalid @enderror" name="weight" value="{{ old('weight') }}" required autocomplete="weight">
+                                <input id="weight" type="number" value="{{ $book->weight }}" class="form-control @error('weight') is-invalid @enderror" name="weight" value="{{ old('weight') }}" required autocomplete="weight">
 
                                 @error('weight')
                                     <span class="invalid-feedback" role="alert">
@@ -78,17 +78,19 @@
 
                             <div class="col-md-6">
                                 <select class="form-control @error('breed') is-invalid @enderror" id="breed" name="breed" required>
-                                    <option value="Unknown">Unknown</option>
-                                    <option value="Afghan">Afghan</option>
-                                    <option value="African Wild Dog">African Wild Dog</option>
-                                    <option value="Airedale">Airedale</option>
-                                    <option value="American Hairless">American Hairless</option>
-                                    <option value="American spaniel">American spaniel</option>
-                                    <option value="Basenji">Basenji</option>
-                                    <option value="Basset">Basset</option>
-                                    <option value="Beagle">Beagle</option>
-                                    <option value="Breaded Collie">Breaded Collie</option>
-                                    <option value="Bermaise">Bermaise</option>
+                                    <option value="Unknown">-- Unknown --</option>
+                                    <option value="History">History</option>
+                                    <option value="Science">Science</option>
+                                    <option value="Economics">Economics</option>
+                                    <option value="Religion">Religion</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="Art">Art</option>
+                                    <option value="Psychology">Psychology</option>
+                                    <option value="Sociology">Sociology</option>
+                                    <option value="Philosophy">Philosophy</option>
+                                    <option value="Politics">Politics</option>
+                                    <option value="Geography">Geography</option>
+                                    <option value="Physics">Physics</option>
 
                                 </select>
                                 @error('breed')
@@ -148,7 +150,7 @@
                         <div class="row mb-3">
                             <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
                             <div class="col-md-6">
-                                <textarea class="form-control" aria-label="description" name="description" >{{ $dog->description }}</textarea>
+                                <textarea class="form-control" aria-label="description" name="description" >{{ $book->description }}</textarea>
                             </div>
                         </div>
 

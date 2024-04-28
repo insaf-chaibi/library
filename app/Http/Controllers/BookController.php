@@ -40,9 +40,10 @@ class BookController extends Controller
     {
         $input=$request->all();
         $input=request()->validate([
-            'name' => ['required', 'string', 'max:15'],
-            'price' =>['required','integer'],
             'image' => 'required',
+            'name' => ['required', 'string', 'max:15'],
+            'caterogy' => 'required',
+            'price' =>['required','integer'],
             'description' => ['string'],
         ]);
         $input['user_id'] = Auth::user()->id;
@@ -89,6 +90,7 @@ class BookController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:15'],
+            'category' =>['required'],
             'price' =>['required'],
             'description' => 'string'
 

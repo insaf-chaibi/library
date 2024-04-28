@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('ref')->nullable();
-            $table->string('name');
-            $table->float('price');
             $table->string('image');
+            $table->string('name');
+            $table->string('caterogy');
+            $table->float('price');
             $table->integer('description');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
