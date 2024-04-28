@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'phone',
         'email',
         'password',
     ];
@@ -48,8 +49,8 @@ class User extends Authenticatable
             return $this->hasMany('App\Models\Book');
         }
 
-        /*public function adoptionRequests()
+        public function carts()
         {
-            return $this->hasMany(AdoptionRequest::class);
-        }*/
+            return $this->hasMany('App\Models\Cart');
+        }
 }
