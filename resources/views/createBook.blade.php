@@ -46,7 +46,6 @@
 
                         <div class="row mb-3">
                             <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
-
                             <div class="col-md-6">
                                 <select class="form-control @error('category') is-invalid @enderror" id="category" name="category" required>
                                     <option value="Unknown">-- Unknown --</option>
@@ -89,7 +88,7 @@
                         <div class="row mb-3">
                             <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
                             <div class="col-md-6">
-                                <textarea class="form-control" aria-label="description" name="description"></textarea>
+                                <textarea class="form-control" aria-label="description" name="description" id="description"></textarea>
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
