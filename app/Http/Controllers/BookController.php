@@ -41,7 +41,7 @@ class BookController extends Controller
         $input=$request->all();
         $input=request()->validate([
             'image' => 'required',
-            'name' => ['required', 'string', 'max:15'],
+            'name' => ['required', 'string', 'max:50'],
             'caterogy' => 'required',
             'price' =>['required','integer'],
             'description' => ['string'],
@@ -53,7 +53,7 @@ class BookController extends Controller
         $book = Book::create($input);
         $book->ref='Ref-'.$book->id;
         $book->save();
-        return redirect()->back()->with('success','Book created successfully.');
+        return redirect()->back()->with('success','Book added successfully.');
 
     }
 
@@ -89,7 +89,7 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:15'],
+            'name' => ['required', 'string', 'max:50'],
             'category' =>['required'],
             'price' =>['required'],
             'description' => 'string'
@@ -117,7 +117,6 @@ class BookController extends Controller
         $book = Book::find($id);
         $input = [
             'totalPrice' => $book->price,
-            'qte' => 1 ,
             'user_id' => Auth::user()->id,
             'book_id' => $id,
         ];
