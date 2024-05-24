@@ -18,8 +18,7 @@
 
         @foreach ($books as $item)
             <div class="col-md-3 cards">
-                <!--<div class="book-container" @if($item->status) style="background-color:#cccccc !important" @endif>-->
-                <div class="book-container">
+                <div class="dog-container">
 
                     <img src="{{ $item->image }}" class="img-fluid" style="height: 160px " >
                     <h4 style="font-weight:bold">{{ $item->name}}</h4>
@@ -32,7 +31,6 @@
                                 @csrf
                                 <!--<button type="submit" class="btn" @if($item->status) disabled style="background-color:#5f5e5e !important" @endif>Buy</button>-->
                                 <button type="submit" class="btn">Add to Cart</button>
-
                             </form>
 
                         </div>

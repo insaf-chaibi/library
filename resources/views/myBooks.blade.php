@@ -14,7 +14,7 @@
         @foreach ($books as $item)
             <div class="col-md-3">
                 <!--<div class="dog-container" @if($item->status) style="background-color:#c2c1c1 !important" @endif>-->
-                <div class="book-container">
+                <div class="dog-container">
 
                     <img src="{{ $item->image }}" class="img-fluid" style="height: 160px " >
                     <h4 style="font-weight:bold">{{ $item->name}}</h4>
