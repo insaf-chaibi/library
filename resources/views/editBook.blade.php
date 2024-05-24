@@ -34,50 +34,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="location" class="col-md-4 col-form-label text-md-end">{{ __('Location') }}</label>
+                            <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
 
                             <div class="col-md-6">
-                                <input id="location" type="text" value="{{ $book->location }}" class="form-control @error('location') is-invalid @enderror" name="location" value="{{ old('location') }}" required autocomplete="location" >
-
-                                @error('location')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="age" class="col-md-4 col-form-label text-md-end">{{ __('Age') }}</label>
-                            <div class="col-md-6">
-                                <input id="age" type="number" value="{{ $book->age }}" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age">
-                                @error('age')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="weight" class="col-md-4 col-form-label text-md-end">{{ __('Weight') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="weight" type="number" value="{{ $book->weight }}" class="form-control @error('weight') is-invalid @enderror" name="weight" value="{{ old('weight') }}" required autocomplete="weight">
-
-                                @error('weight')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="breed" class="col-md-4 col-form-label text-md-end">{{ __('Breed') }}</label>
-
-                            <div class="col-md-6">
-                                <select class="form-control @error('breed') is-invalid @enderror" id="breed" name="breed" required>
+                                <select class="form-control @error('category') is-invalid @enderror" id="category" name="category" required>
                                     <option value="Unknown">-- Unknown --</option>
                                     <option value="History">History</option>
                                     <option value="Science">Science</option>
@@ -93,7 +53,7 @@
                                     <option value="Physics">Physics</option>
 
                                 </select>
-                                @error('breed')
+                                @error('category')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -101,51 +61,20 @@
                             </div>
                         </div>
 
-
                         <div class="row mb-3">
-                            <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Gender') }}</label>
+                            <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('Price') }}</label>
 
                             <div class="col-md-6">
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input id="male" type="radio" value="Male" class="custom-control-input" name="gender" required>
-                                    <label class="custom-control-label" for="male">Male</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input id="female" type="radio" value="Female" class="custom-control-input" name="gender" required>
-                                    <label class="custom-control-label" for="female">Female</label>
-                                </div>
+                                <input id="price" type="text" value="{{ $book->price }}" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" >
+
+                                @error('price')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="vaccinated" class="col-md-4 col-form-label text-md-end">{{ __('Vaccinated') }}</label>
-
-                            <div class="col-md-6">
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input id="vaccinatedYes" type="radio" value="Yes" class="custom-control-input" name="vaccinated" required>
-                                    <label class="custom-control-label" for="vaccinatedYes">Yes</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input id="vaccinatedNo" type="radio" value="No" class="custom-control-input" name="vaccinated" required>
-                                    <label class="custom-control-label" for="vaccinatedNo">No</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="sterilized" class="col-md-4 col-form-label text-md-end">{{ __('Sterilized') }}</label>
-
-                            <div class="col-md-6">
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input id="sterilizedYes" type="radio" value="Yes" class="custom-control-input" name="sterilized" required>
-                                    <label class="custom-control-label" for="sterilizedYes">Yes</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input id="sterilizedNo" type="radio" value="No" class="custom-control-input" name="sterilized" required>
-                                    <label class="custom-control-label" for="sterilizedNo">No</label>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="row mb-3">
                             <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('ref')->nullable();
             $table->string('image');
             $table->string('name');
-            $table->string('caterogy');
+            $table->string('category');
             $table->integer('price');
             $table->string('description');
             $table->unsignedBigInteger('user_id');

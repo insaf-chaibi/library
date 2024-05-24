@@ -17,9 +17,10 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->bigInteger('phone');
+            //$table->string('role')->default('user');
+            $table->string('role');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('role')->default('user');
             $table->rememberToken();
             $table->timestamps();
         });

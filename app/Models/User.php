@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'phone',
+        'role',
         'email',
         'password',
     ];
@@ -43,14 +44,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-        //The relationship between tables
-        public function books()
-        {
-            return $this->hasMany('App\Models\Book');
-        }
+    //The relationship between tables
+    public function books()
+    {
+        return $this->hasMany('App\Models\Book');
+    }
 
-        public function carts()
-        {
-            return $this->hasMany('App\Models\Cart');
-        }
+    public function carts()
+    {
+        return $this->hasMany('App\Models\Cart');
+    }
 }

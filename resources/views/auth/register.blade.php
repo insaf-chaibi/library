@@ -40,6 +40,21 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="author" name="role" value="author" class="custom-control-input">
+                                <label class="custom-control-label" id="role" for="author">Author</label>
+                            </div>
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="client" name="role"  value="client" class="custom-control-input">
+                                <label class="custom-control-label" id="role"for="client">Client</label>
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">

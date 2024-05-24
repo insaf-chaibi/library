@@ -39,12 +39,12 @@ class UserController extends Controller
         //
     }
 
-    public function dashboard()
+    /*public function dashboard()
     {
         $users = User::all();
 
         $books = book::all();
-        /*$adoptionRequests = AdoptionRequest::all();
+        $adoptionRequests = AdoptionRequest::all();
         $label = ['Number of dogs', 'Adoption requests' ,'Adopted dogs', 'Not adopted dogs', 'Pending dogs'];
         $number = [
             dog::count(),
@@ -52,9 +52,9 @@ class UserController extends Controller
             dog::where('status', '=', 1)->count(),
             dog::where('status', '=', 0)->count(),
             AdoptionRequest::count()-AdoptionRequest::where('status', '=', 1)->count(),
-        ];*/
+        ];
         return view('dashboard.dashboard', compact('users', 'books', 'adoptionRequests','label','number'));
-    }
+    }*/
 
 
     public function  users(){
@@ -109,7 +109,7 @@ class UserController extends Controller
             return view('profileUser',compact('user'));
         }
         else
-        if(Auth::user()->role=='auteur'){
+        if(Auth::user()->role=='author'){
             return view('profileAuteur',compact('user'));
         }*/
     }
@@ -122,10 +122,10 @@ class UserController extends Controller
         }*/
 
         $books = Book::where('user_id','=',Auth::user()->id)->latest()->paginate(12);
-        if((Auth::user()->role=='client')){
+        if((Auth::user()->role=='author')){
             return view('myBooks',compact('books'));
         }
-        if((Auth::user())->role=='auteur'){
+        if((Auth::user())->role=='author'){
             return view('create');
         }
     }

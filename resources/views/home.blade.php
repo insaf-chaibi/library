@@ -15,6 +15,7 @@
                 </div>
             @endif
         </div>
+
         @foreach ($books as $item)
             <div class="col-md-3 cards">
                 <!--<div class="book-container" @if($item->status) style="background-color:#cccccc !important" @endif>-->
@@ -27,10 +28,10 @@
 
                     <div class="row">
                         <div class="col-5">
-                            <form action="{{ route('adopt', $item->id)}}" method="POST">
+                            <form action="{{ route('addToCart', $item->id)}}" method="POST">
                                 @csrf
                                 <!--<button type="submit" class="btn" @if($item->status) disabled style="background-color:#5f5e5e !important" @endif>Buy</button>-->
-                                <button type="submit" class="btn">Buy</button>
+                                <button type="submit" class="btn">Add to Cart</button>
 
                             </form>
 

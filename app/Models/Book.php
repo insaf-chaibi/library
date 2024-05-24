@@ -11,7 +11,7 @@ class Book extends Model
     protected $fillable = [
         'image',
         'name',
-        'caterogy',
+        'category',
         'price',
         'description',
         'user_id',

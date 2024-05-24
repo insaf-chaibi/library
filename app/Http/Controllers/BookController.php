@@ -42,7 +42,7 @@ class BookController extends Controller
         $input=request()->validate([
             'image' => 'required',
             'name' => ['required', 'string', 'max:50'],
-            'caterogy' => 'required',
+            'category' => 'required',
             'price' =>['required','integer'],
             'description' => ['string'],
         ]);
@@ -51,8 +51,8 @@ class BookController extends Controller
         $input['image'] = $request->file('image')->store('images','public');
 
         $book = Book::create($input);
-        $book->ref='Ref-'.$book->id;
-        $book->save();
+        $book -> ref='Ref-'.$book->id;
+        $book -> save();
         return redirect()->back()->with('success','Book added successfully.');
 
     }
@@ -121,7 +121,8 @@ class BookController extends Controller
             'book_id' => $id,
         ];
 
-        $cart = Cart ::create($input);
+        $cart = Cart::create($input);
+        //$cart -> save();
 
         return redirect()->back()->with('success','Book added to cart successfully.');
     }
@@ -132,6 +133,40 @@ class BookController extends Controller
 
         return view('books', compact('books'));
     }
+
+    public function  showDetails($id){
+        $book = book::where('id',$id)->get()->first();
+    return view('book_details',compact('book'));
+    }
+
+    public function filterByCategory(Request $request)
+    {
+        // Define the categories array
+        $categories = [
+            'History',
+            'Science',
+            'Economics',
+            'Religion',
+            'Computer Science',
+            'Art',
+            'Psychology',
+            'Sociology',
+            'Philosophy',
+            'Politics',
+            'Geography',
+            'Physics',
+        ];
+
+        // Get the category input from the request
+        $category = $request->input('category');
+
+        // Filter books by category
+        $books = Book::where('category', $category)->paginate(10);
+
+        // Return the view with the filtered books and categories
+        return view('home', compact('books','categories')) ;
+    }
+
 
 
 }

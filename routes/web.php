@@ -29,11 +29,14 @@ Route::get('/profile', [App\Http\Controllers\UserController::class ,'profile'])-
 Route::get('/createBook', [App\Http\Controllers\BookController::class, 'create'])->name('createBook');
 Route::get('/myBooks', [App\Http\Controllers\UserController::class, 'myBooks'])->name('myBooks');
 Route::get('/editBook', [App\Http\Controllers\BookController::class, 'edit'])->name('editBook');
-Route::post('/buy/{id?}', [App\Http\Controllers\DogController::class, 'buy'])->name('buy');
-Route::get('/details/{id?}', [App\Http\Controllers\DogController::class, 'showDetails'])->name('details');
+Route::post('/addToCart/{id?}', [App\Http\Controllers\BookController::class, 'addToCart'])->name('addToCart');
+Route::get('/details/{id?}', [App\Http\Controllers\BookController::class, 'showDetails'])->name('details');
 
 Route::get('/cart', [App\Http\Controllers\CartController::class, 'cartList']);
-Route::post('addToCart/{id}', [App\Http\Controllers\ProductController::class, 'addToCart']);
+//Route::post('addToCart/{id}', [App\Http\Controllers\BookController::class, 'addToCart']);
+
+Route::get('/category', [App\Http\Controllers\BookController::class, 'filterByCategory'])->name('categoryFilter');
+
 
 
 Route :: middleware(['auth', 'role:admin'])->group(function () {
