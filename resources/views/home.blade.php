@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container" style="padding-top: 2%">
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success" role="alert">
+                {{$message}}
+            </div>
+        @endif
+    </div>
     <div class="container">
         <div class="d-flex flex-column">
             <div class=" p-4">
