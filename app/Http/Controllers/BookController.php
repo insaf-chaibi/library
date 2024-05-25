@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use Illuminate\Http\Request;
 use App\Models\Cart;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
@@ -118,13 +118,12 @@ class BookController extends Controller
         $input = [
             'totalPrice' => $book->price,
             'user_id' => Auth::user()->id,
-            'book_id' => $id,
+            'book_id' => $book->id,
         ];
 
         $cart = Cart::create($input);
-        //$cart -> save();
 
-        return redirect()->back()->with('success','Book added to cart successfully.');
+        return redirect()->route('home')->with('success','Book added to cart successfully.');
     }
 
     public function bookList()

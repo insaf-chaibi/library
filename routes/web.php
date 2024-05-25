@@ -32,17 +32,21 @@ Route::get('/editBook', [App\Http\Controllers\BookController::class, 'edit'])->n
 Route::post('/addToCart/{id?}', [App\Http\Controllers\BookController::class, 'addToCart'])->name('addToCart');
 Route::get('/details/{id?}', [App\Http\Controllers\BookController::class, 'showDetails'])->name('details');
 
-Route::get('/cart', [App\Http\Controllers\CartController::class, 'cartList']);
+Route::get('/cart', [App\Http\Controllers\CartController::class, 'cartList'])->name("cart");
+Route::delete('/delete_cart/{id}', [App\Http\Controllers\CartController::class, 'destroy'])->name("carts.destroy");
 //Route::post('addToCart/{id}', [App\Http\Controllers\BookController::class, 'addToCart']);
 
 Route::get('/category', [App\Http\Controllers\BookController::class, 'filterByCategory'])->name('categoryFilter');
 
+Route::get('/users', [UserController::class, 'users'])->name('users');
+Route::get('/books', [UserController::class, 'all_books'])->name('books');    // Other admin routes
 
 
-Route :: middleware(['auth', 'role:admin'])->group(function () {
+
+
+Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
     Route::get('/users', [UserController::class, 'users'])->name('users');
-    Route::get('/books', [UserController::class, 'all_books'])->name('books');
-}
+    Route::get('/books', [UserController::class, 'all_books'])->name('books');    // Other admin routes
+});
 
-);

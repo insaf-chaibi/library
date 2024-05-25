@@ -90,10 +90,12 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function destroy($id)
     {
+        $cart=Cart::find($id);
         $cart->delete();
-        return redirect()->back()->with('success', 'Item cart removeded successfully !');
+        return redirect()->route('cart')->with('success','Item cart removeded successfully !');
+
     }
 
     public function cartList()

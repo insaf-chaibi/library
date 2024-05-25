@@ -17,7 +17,7 @@
                 <th scope="col">Image</th>
                 <th scope="col">Title</th>
                 <th scope="col">Price</th>
-                <th scope="col">Remove</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -27,7 +27,6 @@
                     <td><img src="{{ $item->book->image }}" style="height:60px ; weight:60px"></td>
                     <td>{{ $item->book->name }}</td>
                     <td>{{ $item->book->price }} TND  </td>
-                    <td>{{ $item->totalPrice }} TND</td>
                     <td>
                         <form action="{{ route('carts.destroy',$item->id) }}" method="POST">
                             @csrf

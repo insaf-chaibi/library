@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 #use App\Models\AdoptionRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Auth;
 use App\Models\Book;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 #use App\Http\Controllers\AdoptionRequestController;
 
@@ -28,7 +28,16 @@ class UserController extends Controller
     {
         //
     }
+public function dashboard()
+{
+    $user=Auth::user();
+    if($user->role=='admin'){
+        return "This is your dashboard";
+    }else{
+        return response()->view('error', [], 403);
+    }
 
+}
     public function show($id)
     {
         //
